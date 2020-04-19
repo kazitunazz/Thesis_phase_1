@@ -236,8 +236,11 @@ for i in range(0,columnNumber):
     elif(y=="Gujarat Lions"):
     
         dataset.at[i,'OppositionIndex']=11
+    elif(y=="Royal Challengers Bengaluru"):
+    
+        dataset.at[i,'OppositionIndex']=12
     else:
-        dataset.at[i,'VenueIndex']=0
+        dataset.at[i,'OppositionIndex']=0
 
 #create new dataframe using the values of csv file
 #df = pd.DataFrame(dataset, columns = ['Venue', 'VenueExp'])
@@ -428,28 +431,400 @@ df["MatchOpp"] = MatchOpp
 ################################
 
 
+## TotalRuns by particular venue
+runven1=0
+runven2=0
+runven3=0
+runven4=0
+runven5=0
+runven6=0
+runven7=0
+runven8=0
+runven9=0
+runven10=0
+runven11=0
+runven12=0
+runven13=0
+runven14=0
+runven15=0
+runven16=0
+runven17=0
+VenueRun=[]   
+for i in range(0,columnNum):
+    val=df.at[i,'VenueIndex']
+    if(val==1):
+        runven1=runven1+df.at[i,'Runs']
+        VenueRun.append(runven1)
+    elif(val==2):
+        runven2=runven2+df.at[i,'Runs']
+        VenueRun.append(runven2)
+    elif(val==3):
+        runven3=runven3+df.at[i,'Runs']
+        VenueRun.append(runven3)
+    elif(val==4):
+        runven4=runven4+df.at[i,'Runs']
+        VenueRun.append(runven4)
+    elif(val==5):
+        runven5=runven5+df.at[i,'Runs']
+        VenueRun.append(runven5)
+    elif(val==6):
+        runven6=runven6+df.at[i,'Runs']
+        VenueRun.append(runven6)
+    elif(val==7):
+        runven7=runven7+df.at[i,'Runs']
+        VenueRun.append(runven7)
+    elif(val==8):
+        runven8=runven8+df.at[i,'Runs']
+        VenueRun.append(runven8)
+    elif(val==9):
+        runven9=runven9+df.at[i,'Runs']
+        VenueRun.append(runven9)
+    elif(val==10):
+        runven10=runven10+df.at[i,'Runs']
+        VenueRun.append(runven10)
+    elif(val==11):
+        runven11=runven11+df.at[i,'Runs']
+        VenueRun.append(runven11)
+    elif(val==12):
+        runven12=runven12+df.at[i,'Runs']
+        VenueRun.append(runven12)
+    elif(val==13):
+        runven13=runven13+df.at[i,'Runs']
+        VenueRun.append(runven13)
+    elif(val==14):
+        runven14=runven14+df.at[i,'Runs']
+        VenueRun.append(runven14)
+    elif(val==15):
+        runven15=runven15+df.at[i,'Runs']
+        VenueRun.append(runven15)
+    elif(val==16):
+        runven16=runven16+df.at[i,'Runs']
+        VenueRun.append(runven16)
+    elif(val==17):
+        runven17=runven17+df.at[i,'Runs']
+        VenueRun.append(runven17)
+   
+        
+    else:
+        VenueRun.append(0)
+   
+df["VenueRun"]=VenueRun
 
-#Calculation of Average
+
+######## Venue Total Out
+outven1=0
+outven2=0
+outven3=0
+outven4=0
+outven5=0
+outven6=0
+outven7=0
+outven8=0
+outven9=0
+outven10=0
+outven11=0
+outven12=0
+outven13=0
+outven14=0
+outven15=0
+outven16=0
+outven17=0
+VenueTotalOut=[]   
+for i in range(0,columnNum):
+    val=df.at[i,'VenueIndex']
+    if (df.at[i,'Out']==1):
+        if(val==1):
+            outven1=outven1+1
+            VenueTotalOut.append(outven1)
+        elif(val==2):
+            outven2=outven2+1
+            VenueTotalOut.append(outven2)
+        elif(val==3):
+            outven3=outven3+1
+            VenueTotalOut.append(outven3)
+        elif(val==4):
+            outven4=outven4+1
+            VenueTotalOut.append(outven4)
+        elif(val==5):
+            outven5=outven5+1
+            VenueTotalOut.append(outven5)
+        elif(val==6):
+            outven6=outven6+1
+            VenueTotalOut.append(outven6)
+        elif(val==7):
+            outven7=outven7+1
+            VenueTotalOut.append(outven7)
+        elif(val==8):
+            outven8=outven8+1
+            VenueTotalOut.append(outven8)
+        elif(val==9):
+            outven9=outven9+1
+            VenueTotalOut.append(outven9)
+        elif(val==10):
+            outven10=outven10+1
+            VenueTotalOut.append(outven10)
+        elif(val==11):
+            outven11=outven11+1
+            VenueTotalOut.append(outven11)
+        elif(val==12):
+            outven12=outven12+1
+            VenueTotalOut.append(outven12)
+        elif(val==13):
+            outven13=outven13+1
+            VenueTotalOut.append(outven13)
+        elif(val==14):
+            outven14=outven14+1
+            VenueTotalOut.append(outven14)
+        elif(val==15):
+            outven15=outven15+1
+            VenueTotalOut.append(outven15)
+        elif(val==16):
+            outven16=outven16+1
+            VenueTotalOut.append(outven16)
+        elif(val==17):
+            outven17=outven17+1
+            VenueTotalOut.append(outven17)
+        else:
+            VenueTotalOut.append(0)
+    elif(df.at[i,'Out']==0):
+        if(val==1):
+            VenueTotalOut.append(outven1)
+        elif(val==2):          
+            VenueTotalOut.append(outven2)
+        elif(val==3):         
+            VenueTotalOut.append(outven3)
+        elif(val==4):            
+            VenueTotalOut.append(outven4)
+        elif(val==5):           
+            VenueTotalOut.append(outven5)
+        elif(val==6):           
+            VenueTotalOut.append(outven6)
+        elif(val==7):         
+            VenueTotalOut.append(outven7)
+        elif(val==8):       
+            VenueTotalOut.append(outven8)
+        elif(val==9):           
+            VenueTotalOut.append(outven9)
+        elif(val==10):           
+            VenueTotalOut.append(outven10)
+        elif(val==11):           
+            VenueTotalOut.append(outven11)
+        elif(val==12):        
+            VenueTotalOut.append(outven12)
+        elif(val==13):         
+            VenueTotalOut.append(outven13)
+        elif(val==14):            
+            VenueTotalOut.append(outven14)
+        elif(val==15):         
+            VenueTotalOut.append(outven15)
+        elif(val==16):           
+            VenueTotalOut.append(outven16)
+        elif(val==17):         
+            VenueTotalOut.append(outven17)
+        else:
+            VenueTotalOut.append(0)            
+    else:
+        VenueTotalOut.append(0)
+   
+df["VenueTotalOut"]=VenueTotalOut
+
+
+## TotalRuns against particular opposition
+opprun1=0
+opprun2=0
+opprun3=0
+opprun4=0
+opprun5=0
+opprun6=0
+opprun7=0
+opprun8=0
+opprun9=0
+opprun10=0
+opprun11=0
+
+OppTotalRun=[]   
+for i in range(0,columnNum):
+    val=df.at[i,'OppositionIndex']
+    if(val==1):
+        opprun1=opprun1+df.at[i,'Runs']
+        OppTotalRun.append(opprun1)
+    elif(val==2):
+        opprun2=opprun2+df.at[i,'Runs']
+        OppTotalRun.append(opprun2)
+    elif(val==3):
+        opprun3=opprun3+df.at[i,'Runs']
+        OppTotalRun.append(opprun3)
+    elif(val==4):
+        opprun4=opprun4+df.at[i,'Runs']
+        OppTotalRun.append(opprun4)
+    elif(val==5):
+        opprun5=opprun5+df.at[i,'Runs']
+        OppTotalRun.append(opprun5)
+    elif(val==6):
+        opprun6=opprun6+df.at[i,'Runs']
+        OppTotalRun.append(opprun6)
+    elif(val==7):
+        opprun7=opprun7+df.at[i,'Runs']
+        OppTotalRun.append(opprun7)
+    elif(val==8):
+        opprun8=opprun8+df.at[i,'Runs']
+        OppTotalRun.append(opprun8)
+    elif(val==9):
+        opprun9=opprun9+df.at[i,'Runs']
+        OppTotalRun.append(opprun9)
+    elif(val==10):
+        opprun10=opprun10+df.at[i,'Runs']
+        OppTotalRun.append(opprun10)
+    elif(val==11):
+        opprun11=opprun11+df.at[i,'Runs']
+        OppTotalRun.append(opprun11)       
+    else:
+        OppTotalRun.append(0)
+   
+df["OppTotalRun"]=OppTotalRun
+
+
+######## Venue Total Out
+outopp1=0
+outopp2=0
+outopp3=0
+outopp4=0
+outopp5=0
+outopp6=0
+outopp7=0
+outopp8=0
+outopp9=0
+outopp10=0
+outopp11=0
+
+OppTotalOut=[]   
+for i in range(0,columnNum):
+    val=df.at[i,'OppositionIndex']
+    if (df.at[i,'Out']==1):
+        if(val==1):
+            outopp1=outopp1+1
+            OppTotalOut.append(outopp1)
+        elif(val==2):
+            outopp2=outopp2+1
+            OppTotalOut.append(outopp2)
+        elif(val==3):
+            outopp3=outopp3+1
+            OppTotalOut.append(outopp3)
+        elif(val==4):
+            outopp4=outopp4+1
+            OppTotalOut.append(outopp4)
+        elif(val==5):
+            outopp5=outopp5+1
+            OppTotalOut.append(outopp5)
+        elif(val==6):
+            outopp6=outopp6+1
+            OppTotalOut.append(outopp6)
+        elif(val==7):
+            outopp7=outopp7+1
+            OppTotalOut.append(outopp7)
+        elif(val==8):
+            outopp8=outopp8+1
+            OppTotalOut.append(outopp8)
+        elif(val==9):
+            outopp9=outopp9+1
+            OppTotalOut.append(outopp9)
+        elif(val==10):
+            outopp10=outopp10+1
+            OppTotalOut.append(outopp10)
+        elif(val==11):
+            outopp11=outopp11+1
+            OppTotalOut.append(outopp11)
+       
+        else:
+            OppTotalOut.append(0)
+            
+            
+    elif(df.at[i,'Out']==0):
+        if(val==1):
+            OppTotalOut.append(outopp1)
+        elif(val==2):          
+            OppTotalOut.append(outopp2)
+        elif(val==3):         
+            OppTotalOut.append(outopp3)
+        elif(val==4):            
+            OppTotalOut.append(outopp4)
+        elif(val==5):           
+            OppTotalOut.append(outopp5)
+        elif(val==6):           
+            OppTotalOut.append(outopp6)
+        elif(val==7):         
+            OppTotalOut.append(outopp7)
+        elif(val==8):       
+            OppTotalOut.append(outopp8)
+        elif(val==9):           
+            OppTotalOut.append(outopp9)
+        elif(val==10):           
+            OppTotalOut.append(outopp10)
+        elif(val==11):           
+            OppTotalOut.append(outopp11)
+        
+        else:
+            OppTotalOut.append(0)            
+    else:
+        OppTotalOut.append(0)
+   
+df["OppTotalOut"]=OppTotalOut
+
+
+
+
+
+
+
+#Calculation of Average for all match
 CalAvg=[]
 for i in range(0,columnNum):
     #CalAvg.append(math.floor((df.at[i,'TotalRuns']/df.at[i,'TotalOut'])))
     CalAvg.append(df.at[i,'TotalRuns']/df.at[i,'TotalOut'])
 df["CalAvg"]=CalAvg
 
+#Calculation of Average by venue
+VenAvg=[]
+for i in range(0,columnNum):
+    #CalAvg.append(math.floor((df.at[i,'TotalRuns']/df.at[i,'TotalOut'])))
+    if(df.at[i,'VenueTotalOut']==0):
+        VenAvg.append(df.at[i,'CalAvg'])
+        ####VenAvg.append("NBA")
+        ## NBA = No Batting Average
+    else:
+        VenAvg.append(df.at[i,'VenueRun']/df.at[i,'VenueTotalOut'])
+df["VenAvg"]=VenAvg
 
+#Calculation of Average by venue
+OppAvg=[]
+for i in range(0,columnNum):
+    #CalAvg.append(math.floor((df.at[i,'TotalRuns']/df.at[i,'TotalOut'])))
+    if(df.at[i,'OppTotalOut']==0):
+        OppAvg.append(df.at[i,'CalAvg'])
+        ####VenAvg.append("NBA")
+        ## NBA = No Batting Average
+    else:
+        OppAvg.append(df.at[i,'OppTotalRun']/df.at[i,'OppTotalOut'])
+df["OppAvg"]=OppAvg
 
 
 ################################
 ################################
 
 
-#Calculation of SR
+#Calculation of SR for all match
 CalSR=[]
 for i in range(0,columnNum):
     #CalAvg.append(math.floor((df.at[i,'TotalRuns']/df.at[i,'TotalOut'])))
     CalSR.append((df.at[i,'Runs']/df.at[i,'Balls'])*100)
 df["CalSR"]=CalSR
 
+#Calculation of SR for a particular venue
+CalSR=[]
+for i in range(0,columnNum):
+    #CalAvg.append(math.floor((df.at[i,'TotalRuns']/df.at[i,'TotalOut'])))
+    CalSR.append((df.at[i,'Runs']/df.at[i,'Balls'])*100)
+df["CalSR"]=CalSR
 
 
 ################################
@@ -1223,6 +1598,76 @@ for value in df["CalAvg"]:
 df["AvgRating"] = AvgRating  
 
 
+
+
+#BattingAverage rating For  Venue 
+AvgRatingVenue=[]
+for value in df["VenAvg"]:
+    if value>=0.0 and value<=5.99:
+        AvgRatingVenue.append(1/2.8)
+    elif value>=6.00 and value<=9.99:
+        AvgRatingVenue.append(2/2.8)
+    elif value>=10.00 and value<=15.99:
+        AvgRatingVenue.append(3/2.8)
+    elif value>=16.00 and value<=19.99:
+        AvgRatingVenue.append(4/2.8)
+    elif value>=20.00 and value<=25.99:
+        AvgRatingVenue.append(5/2.8)
+    elif value>=26.00 and value<=29.99:
+        AvgRatingVenue.append(6/2.8)
+    elif value>=30.00 and value<=35.99:
+        AvgRatingVenue.append(7/2.8)
+    elif value>=36.00 and value<=39.99:
+        AvgRatingVenue.append(8/2.8)
+    elif value>=40.00 and value<=41.99:
+        AvgRatingVenue.append(9/2.8)
+    elif value>=42.00 and value<=43.99:
+        AvgRatingVenue.append(10/2.8)
+    elif value>=44.00 and value<=45.99:
+        AvgRatingVenue.append(11/2.8)
+    elif value>=46.00 and value<=47.99:
+        AvgRatingVenue.append(12/2.8)
+    elif value>=48.00 and value<=49.99:
+        AvgRatingVenue.append(13/2.8)
+    elif value>=50.00 :
+        AvgRatingVenue.append(14/2.8)
+df["AvgRatingVenue"] = AvgRatingVenue
+
+
+
+
+#BattingAverage rating For  Venue 
+AvgRatingOpp=[]
+for value in df["OppAvg"]:
+    if value>=0.0 and value<=5.99:
+        AvgRatingOpp.append(1/2.8)
+    elif value>=6.00 and value<=9.99:
+        AvgRatingOpp.append(2/2.8)
+    elif value>=10.00 and value<=15.99:
+        AvgRatingOpp.append(3/2.8)
+    elif value>=16.00 and value<=19.99:
+        AvgRatingOpp.append(4/2.8)
+    elif value>=20.00 and value<=25.99:
+        AvgRatingOpp.append(5/2.8)
+    elif value>=26.00 and value<=29.99:
+        AvgRatingOpp.append(6/2.8)
+    elif value>=30.00 and value<=35.99:
+        AvgRatingOpp.append(7/2.8)
+    elif value>=36.00 and value<=39.99:
+        AvgRatingOpp.append(8/2.8)
+    elif value>=40.00 and value<=41.99:
+        AvgRatingOpp.append(9/2.8)
+    elif value>=42.00 and value<=43.99:
+        AvgRatingOpp.append(10/2.8)
+    elif value>=44.00 and value<=45.99:
+        AvgRatingOpp.append(11/2.8)
+    elif value>=46.00 and value<=47.99:
+        AvgRatingOpp.append(12/2.8)
+    elif value>=48.00 and value<=49.99:
+        AvgRatingOpp.append(13/2.8)
+    elif value>=50.00 :
+        AvgRatingOpp.append(14/2.8)
+df["AvgRatingOpp"] = AvgRatingOpp
 ################################
 ################################
 
@@ -1439,7 +1884,7 @@ df["Form"] = FormValue
 #######################################
 ####              Calculation of Opposition      ############
 ####################################
-
+"""
 OppValue=[]
 OppValue.append(0)
 df.at[0,'OppositionValue']=0
@@ -1461,34 +1906,342 @@ df.at[0,'VenueValue']=0
 for i in range(1,columnNum):
       VenueValue.append(0.4262*(df.at[i-1,'AvgRating'])+0.2566*(df.at[i-1,'MatchVen'])+0.1510*(df.at[i-1,'SrRating'])+0.0787*(df.at[i-1,'HundredVenueRating'])+0.0556*(df.at[i-1,'FiftyVenue'])+0.0328*(df.at[i-1,'HighestScoreRating']))  
 
-df["VenueValue"] = VenueValue  
+df["VenueValue"] = VenueValue  """
 
 
 
 
-################
-#################
-#####################
-#########################
+###############
+##################
+######   List for match numbers against an opposition ##########
+
+OppositionNumberList1=[]
+OppositionNumberList2=[]
+OppositionNumberList3=[]
+OppositionNumberList4=[]
+OppositionNumberList5=[]
+OppositionNumberList6=[]
+OppositionNumberList7=[]
+OppositionNumberList8=[]
+OppositionNumberList9=[]
+OppositionNumberList10=[]
+OppositionNumberList11=[]
+OppositionNumberList12=[]
+
+for i in range(0,columnNum):
+    if(df.at[i,'OppositionIndex']==1):
+        OppositionNumberList1.append(df.at[i,'Match'])
+    elif(df.at[i,'OppositionIndex']==2):
+        OppositionNumberList2.append(df.at[i,'Match'])
+    elif(df.at[i,'OppositionIndex']==3):
+        OppositionNumberList3.append(df.at[i,'Match'])
+    elif(df.at[i,'OppositionIndex']==4):
+        OppositionNumberList4.append(df.at[i,'Match'])
+    elif(df.at[i,'OppositionIndex']==5):
+        OppositionNumberList5.append(df.at[i,'Match'])
+    elif(df.at[i,'OppositionIndex']==6):
+        OppositionNumberList6.append(df.at[i,'Match'])
+    elif(df.at[i,'OppositionIndex']==7):
+        OppositionNumberList7.append(df.at[i,'Match'])
+    elif(df.at[i,'OppositionIndex']==8):
+        OppositionNumberList8.append(df.at[i,'Match'])
+    elif(df.at[i,'OppositionIndex']==9):
+        OppositionNumberList9.append(df.at[i,'Match'])
+    elif(df.at[i,'OppositionIndex']==10):
+        OppositionNumberList10.append(df.at[i,'Match'])
+    elif(df.at[i,'OppositionIndex']==11):
+        OppositionNumberList11.append(df.at[i,'Match'])
+    elif(df.at[i,'OppositionIndex']==12):
+        OppositionNumberList12.append(df.at[i,'Match'])
+
+print(OppositionNumberList1)
+
+
+
+############################
+###############################
+###### Calculation for Opposition Feature's Value #############
+   
+if len(OppositionNumberList1)>0:
+    df.at[OppositionNumberList1[0]-1,"OppositionValue"]=0
+    for i in range(1,len(OppositionNumberList1)):
+        df.at[OppositionNumberList1[i]-1,"OppositionValue"]=(0.4262*(df.at[OppositionNumberList1[i-1]-1,'AvgRatingOpp'])+0.2566*(df.at[OppositionNumberList1[i-1]-1,'MatchOpp'])+0.1510*(df.at[OppositionNumberList1[i-1]-1,'SrRating'])+0.0787*(df.at[OppositionNumberList1[i-1]-1,'HundredOppRating'])+0.0556*(df.at[OppositionNumberList1[i-1]-1,'FiftyOppRating'])-0.0328*df.at[OppositionNumberList1[i-1]-1,'ZeroOppRating'])
+        
+if len(OppositionNumberList2)>0:
+    df.at[OppositionNumberList2[0]-1,"OppositionValue"]=0
+    for i in range(1,len(OppositionNumberList2)):
+        df.at[OppositionNumberList2[i]-1,"OppositionValue"]=(0.4262*(df.at[OppositionNumberList2[i-1]-1,'AvgRatingOpp'])+0.2566*(df.at[OppositionNumberList2[i-1]-1,'MatchOpp'])+0.1510*(df.at[OppositionNumberList2[i-1]-1,'SrRating'])+0.0787*(df.at[OppositionNumberList2[i-1]-1,'HundredOppRating'])+0.0556*(df.at[OppositionNumberList2[i-1]-1,'FiftyOppRating'])-0.0328*df.at[OppositionNumberList2[i-1]-1,'ZeroOppRating'])
+        
+if len(OppositionNumberList3)>0:
+    df.at[OppositionNumberList3[0]-1,"OppositionValue"]=0
+    for i in range(1,len(OppositionNumberList3)):
+        df.at[OppositionNumberList3[i]-1,"OppositionValue"]=(0.4262*(df.at[OppositionNumberList3[i-1]-1,'AvgRatingOpp'])+0.2566*(df.at[OppositionNumberList3[i-1]-1,'MatchOpp'])+0.1510*(df.at[OppositionNumberList3[i-1]-1,'SrRating'])+0.0787*(df.at[OppositionNumberList3[i-1]-1,'HundredOppRating'])+0.0556*(df.at[OppositionNumberList3[i-1]-1,'FiftyOppRating'])-0.0328*df.at[OppositionNumberList3[i-1]-1,'ZeroOppRating'])
+        
+if len(OppositionNumberList4)>0:
+    df.at[OppositionNumberList4[0]-1,"OppositionValue"]=0
+    for i in range(1,len(OppositionNumberList4)):
+        df.at[OppositionNumberList4[i]-1,"OppositionValue"]=(0.4262*(df.at[OppositionNumberList4[i-1]-1,'AvgRatingOpp'])+0.2566*(df.at[OppositionNumberList4[i-1]-1,'MatchOpp'])+0.1510*(df.at[OppositionNumberList4[i-1]-1,'SrRating'])+0.0787*(df.at[OppositionNumberList4[i-1]-1,'HundredOppRating'])+0.0556*(df.at[OppositionNumberList4[i-1]-1,'FiftyOppRating'])-0.0328*df.at[OppositionNumberList4[i-1]-1,'ZeroOppRating'])
+        
+if len(OppositionNumberList5)>0:
+    df.at[OppositionNumberList5[0]-1,"OppositionValue"]=0
+    for i in range(1,len(OppositionNumberList5)):
+        df.at[OppositionNumberList5[i]-1,"OppositionValue"]=(0.4262*(df.at[OppositionNumberList5[i-1]-1,'AvgRatingOpp'])+0.2566*(df.at[OppositionNumberList5[i-1]-1,'MatchOpp'])+0.1510*(df.at[OppositionNumberList5[i-1]-1,'SrRating'])+0.0787*(df.at[OppositionNumberList5[i-1]-1,'HundredOppRating'])+0.0556*(df.at[OppositionNumberList5[i-1]-1,'FiftyOppRating'])-0.0328*df.at[OppositionNumberList5[i-1]-1,'ZeroOppRating'])
+        
+if len(OppositionNumberList6)>0:
+    df.at[OppositionNumberList6[0]-1,"OppositionValue"]=0
+    for i in range(1,len(OppositionNumberList6)):
+        df.at[OppositionNumberList6[i]-1,"OppositionValue"]=(0.4262*(df.at[OppositionNumberList6[i-1]-1,'AvgRatingOpp'])+0.2566*(df.at[OppositionNumberList6[i-1]-1,'MatchOpp'])+0.1510*(df.at[OppositionNumberList6[i-1]-1,'SrRating'])+0.0787*(df.at[OppositionNumberList6[i-1]-1,'HundredOppRating'])+0.0556*(df.at[OppositionNumberList6[i-1]-1,'FiftyOppRating'])-0.0328*df.at[OppositionNumberList6[i-1]-1,'ZeroOppRating'])
+        
+if len(OppositionNumberList7)>0:
+    df.at[OppositionNumberList7[0]-1,"OppositionValue"]=0
+    for i in range(1,len(OppositionNumberList7)):
+        df.at[OppositionNumberList7[i]-1,"OppositionValue"]=(0.4262*(df.at[OppositionNumberList7[i-1]-1,'AvgRatingOpp'])+0.2566*(df.at[OppositionNumberList7[i-1]-1,'MatchOpp'])+0.1510*(df.at[OppositionNumberList7[i-1]-1,'SrRating'])+0.0787*(df.at[OppositionNumberList7[i-1]-1,'HundredOppRating'])+0.0556*(df.at[OppositionNumberList7[i-1]-1,'FiftyOppRating'])-0.0328*df.at[OppositionNumberList7[i-1]-1,'ZeroOppRating'])
+if len(OppositionNumberList8)>0:
+    df.at[OppositionNumberList8[0]-1,"OppositionValue"]=0
+    for i in range(1,len(OppositionNumberList8)):
+        df.at[OppositionNumberList8[i]-1,"OppositionValue"]=(0.4262*(df.at[OppositionNumberList8[i-1]-1,'AvgRatingOpp'])+0.2566*(df.at[OppositionNumberList8[i-1]-1,'MatchOpp'])+0.1510*(df.at[OppositionNumberList8[i-1]-1,'SrRating'])+0.0787*(df.at[OppositionNumberList8[i-1]-1,'HundredOppRating'])+0.0556*(df.at[OppositionNumberList8[i-1]-1,'FiftyOppRating'])-0.0328*df.at[OppositionNumberList8[i-1]-1,'ZeroOppRating'])
+        
+if len(OppositionNumberList9)>0:
+    df.at[OppositionNumberList9[0]-1,"OppositionValue"]=0
+    for i in range(1,len(OppositionNumberList9)):
+        df.at[OppositionNumberList9[i]-1,"OppositionValue"]=(0.4262*(df.at[OppositionNumberList9[i-1]-1,'AvgRatingOpp'])+0.2566*(df.at[OppositionNumberList9[i-1]-1,'MatchOpp'])+0.1510*(df.at[OppositionNumberList9[i-1]-1,'SrRating'])+0.0787*(df.at[OppositionNumberList9[i-1]-1,'HundredOppRating'])+0.0556*(df.at[OppositionNumberList9[i-1]-1,'FiftyOppRating'])-0.0328*df.at[OppositionNumberList9[i-1]-1,'ZeroOppRating'])
+        
+if len(OppositionNumberList10)>0:
+    df.at[OppositionNumberList10[0]-1,"OppositionValue"]=0
+    for i in range(1,len(OppositionNumberList10)):
+        df.at[OppositionNumberList10[i]-1,"OppositionValue"]=(0.4262*(df.at[OppositionNumberList10[i-1]-1,'AvgRatingOpp'])+0.2566*(df.at[OppositionNumberList10[i-1]-1,'MatchOpp'])+0.1510*(df.at[OppositionNumberList10[i-1]-1,'SrRating'])+0.0787*(df.at[OppositionNumberList10[i-1]-1,'HundredOppRating'])+0.0556*(df.at[OppositionNumberList10[i-1]-1,'FiftyOppRating'])-0.0328*df.at[OppositionNumberList10[i-1]-1,'ZeroOppRating'])
+        
+if len(OppositionNumberList11)>0:
+    df.at[OppositionNumberList11[0]-1,"OppositionValue"]=0
+    for i in range(1,len(OppositionNumberList11)):
+        df.at[OppositionNumberList11[i]-1,"OppositionValue"]=(0.4262*(df.at[OppositionNumberList11[i-1]-1,'AvgRatingOpp'])+0.2566*(df.at[OppositionNumberList11[i-1]-1,'MatchOpp'])+0.1510*(df.at[OppositionNumberList11[i-1]-1,'SrRating'])+0.0787*(df.at[OppositionNumberList11[i-1]-1,'HundredOppRating'])+0.0556*(df.at[OppositionNumberList11[i-1]-1,'FiftyOppRating'])-0.0328*df.at[OppositionNumberList11[i-1]-1,'ZeroOppRating'])
+        
+if len(OppositionNumberList12)>0:
+    df.at[OppositionNumberList12[0]-1,"OppositionValue"]=0
+    for i in range(1,len(OppositionNumberList12)):
+        df.at[OppositionNumberList12[i]-1,"OppositionValue"]=(0.4262*(df.at[OppositionNumberList12[i-1]-1,'AvgRatingOpp'])+0.2566*(df.at[OppositionNumberList12[i-1]-1,'MatchOpp'])+0.1510*(df.at[OppositionNumberList12[i-1]-1,'SrRating'])+0.0787*(df.at[OppositionNumberList12[i-1]-1,'HundredOppRating'])+0.0556*(df.at[OppositionNumberList12[i-1]-1,'FiftyOppRating'])-0.0328*df.at[OppositionNumberList12[i-1]-1,'ZeroOppRating'])
+    
+"""
+OppValue=[]
+for j in range(0,len(OppositionNumberList1)):
+    val=OppositionNumberList1[j]-1
+    OppValue.append(df.at[val,'Runs'])
+
+print(OppValue)
+"""
+
+######   List for match numbers in a particular venue ##########
+
+VenueNumberList1=[]
+VenueNumberList2=[]
+VenueNumberList3=[]
+VenueNumberList4=[]
+VenueNumberList5=[]
+VenueNumberList6=[]
+VenueNumberList7=[]
+VenueNumberList8=[]
+VenueNumberList9=[]
+VenueNumberList10=[]
+VenueNumberList11=[]
+VenueNumberList12=[]
+VenueNumberList13=[]
+VenueNumberList14=[]
+VenueNumberList15=[]
+VenueNumberList16=[]
+VenueNumberList17=[]
+VenueNumberList18=[]
+VenueNumberList19=[]
+VenueNumberList20=[]
+VenueNumberList21=[]
+VenueNumberList22=[]
+VenueNumberList23=[]
+VenueNumberList24=[]
+VenueNumberList25=[]
+VenueNumberList26=[]
+  
+
+for i in range(0,columnNum):
+    if(df.at[i,'VenueIndex']==1):
+        VenueNumberList1.append(df.at[i,'Match'])
+    elif(df.at[i,'VenueIndex']==2):
+        VenueNumberList2.append(df.at[i,'Match'])
+    elif(df.at[i,'VenueIndex']==3):
+        VenueNumberList3.append(df.at[i,'Match'])
+    elif(df.at[i,'VenueIndex']==4):
+        VenueNumberList4.append(df.at[i,'Match'])
+    elif(df.at[i,'VenueIndex']==5):
+        VenueNumberList5.append(df.at[i,'Match'])
+    elif(df.at[i,'VenueIndex']==6):
+        VenueNumberList6.append(df.at[i,'Match'])
+    elif(df.at[i,'VenueIndex']==7):
+        VenueNumberList7.append(df.at[i,'Match'])
+    elif(df.at[i,'VenueIndex']==8):
+        VenueNumberList8.append(df.at[i,'Match'])
+    elif(df.at[i,'VenueIndex']==9):
+        VenueNumberList9.append(df.at[i,'Match'])
+    elif(df.at[i,'VenueIndex']==10):
+        VenueNumberList10.append(df.at[i,'Match'])
+    elif(df.at[i,'VenueIndex']==11):
+        VenueNumberList11.append(df.at[i,'Match'])
+    elif(df.at[i,'VenueIndex']==12):
+        VenueNumberList12.append(df.at[i,'Match'])
+    elif(df.at[i,'VenueIndex']==13):
+        VenueNumberList13.append(df.at[i,'Match'])
+    elif(df.at[i,'VenueIndex']==14):
+        VenueNumberList14.append(df.at[i,'Match'])
+    elif(df.at[i,'VenueIndex']==15):
+        VenueNumberList15.append(df.at[i,'Match'])
+    elif(df.at[i,'VenueIndex']==16):
+        VenueNumberList16.append(df.at[i,'Match'])
+    elif(df.at[i,'VenueIndex']==17):
+        VenueNumberList17.append(df.at[i,'Match'])
+    elif(df.at[i,'VenueIndex']==18):
+        VenueNumberList18.append(df.at[i,'Match'])
+    elif(df.at[i,'VenueIndex']==19):
+        VenueNumberList19.append(df.at[i,'Match'])
+    
+    
+###### Calculation for Venue Feature's Value #############
+   
+if len(VenueNumberList1)>0:
+    df.at[VenueNumberList1[0]-1,"VenueValue"]=0
+    for i in range(1,len(VenueNumberList1)):
+        df.at[VenueNumberList1[i]-1,"VenueValue"]=(0.4262*(df.at[VenueNumberList1[i-1]-1,'AvgRatingVenue'])+0.2566*(df.at[VenueNumberList1[i-1]-1,'MatchVen'])+0.1510*(df.at[VenueNumberList1[i-1]-1,'SrRating'])+0.0787*(df.at[VenueNumberList1[i-1]-1,'HundredVenueRating'])+0.0556*(df.at[VenueNumberList1[i-1]-1,'FiftyVenue'])+0.0328*(df.at[VenueNumberList1[i-1]-1,'HighestScoreRating']))
+        
+if len(VenueNumberList2)>0:
+    df.at[VenueNumberList2[0]-1,"VenueValue"]=0
+    for i in range(1,len(VenueNumberList2)):
+        df.at[VenueNumberList2[i]-1,"VenueValue"]=(0.4262*(df.at[VenueNumberList2[i-1]-1,'AvgRatingVenue'])+0.2566*(df.at[VenueNumberList2[i-1]-1,'MatchVen'])+0.1510*(df.at[VenueNumberList2[i-1]-1,'SrRating'])+0.0787*(df.at[VenueNumberList2[i-1]-1,'HundredVenueRating'])+0.0556*(df.at[VenueNumberList2[i-1]-1,'FiftyVenue'])+0.0328*(df.at[VenueNumberList2[i-1]-1,'HighestScoreRating']))
+        
+if len(VenueNumberList3)>0:
+    df.at[VenueNumberList3[0]-1,"VenueValue"]=0
+    for i in range(1,len(VenueNumberList3)):
+        df.at[VenueNumberList3[i]-1,"VenueValue"]=(0.4262*(df.at[VenueNumberList3[i-1]-1,'AvgRatingVenue'])+0.2566*(df.at[VenueNumberList3[i-1]-1,'MatchVen'])+0.1510*(df.at[VenueNumberList3[i-1]-1,'SrRating'])+0.0787*(df.at[VenueNumberList3[i-1]-1,'HundredVenueRating'])+0.0556*(df.at[VenueNumberList3[i-1]-1,'FiftyVenue'])+0.0328*(df.at[VenueNumberList3[i-1]-1,'HighestScoreRating']))
+        
+if len(VenueNumberList4)>0:
+    df.at[VenueNumberList4[0]-1,"VenueValue"]=0
+    for i in range(1,len(VenueNumberList4)):
+        df.at[VenueNumberList4[i]-1,"VenueValue"]=(0.4262*(df.at[VenueNumberList4[i-1]-1,'AvgRatingVenue'])+0.2566*(df.at[VenueNumberList4[i-1]-1,'MatchVen'])+0.1510*(df.at[VenueNumberList4[i-1]-1,'SrRating'])+0.0787*(df.at[VenueNumberList4[i-1]-1,'HundredVenueRating'])+0.0556*(df.at[VenueNumberList4[i-1]-1,'FiftyVenue'])+0.0328*(df.at[VenueNumberList4[i-1]-1,'HighestScoreRating']))
+        
+if len(VenueNumberList5)>0:
+    df.at[VenueNumberList5[0]-1,"VenueValue"]=0
+    for i in range(1,len(VenueNumberList5)):
+        df.at[VenueNumberList5[i]-1,"VenueValue"]=(0.4262*(df.at[VenueNumberList5[i-1]-1,'AvgRatingVenue'])+0.2566*(df.at[VenueNumberList5[i-1]-1,'MatchVen'])+0.1510*(df.at[VenueNumberList5[i-1]-1,'SrRating'])+0.0787*(df.at[VenueNumberList5[i-1]-1,'HundredVenueRating'])+0.0556*(df.at[VenueNumberList5[i-1]-1,'FiftyVenue'])+0.0328*(df.at[VenueNumberList5[i-1]-1,'HighestScoreRating']))
+        
+if len(VenueNumberList6)>0:
+    df.at[VenueNumberList6[0]-1,"VenueValue"]=0
+    for i in range(1,len(VenueNumberList6)):
+        df.at[VenueNumberList6[i]-1,"VenueValue"]=(0.4262*(df.at[VenueNumberList6[i-1]-1,'AvgRatingVenue'])+0.2566*(df.at[VenueNumberList6[i-1]-1,'MatchVen'])+0.1510*(df.at[VenueNumberList6[i-1]-1,'SrRating'])+0.0787*(df.at[VenueNumberList6[i-1]-1,'HundredVenueRating'])+0.0556*(df.at[VenueNumberList6[i-1]-1,'FiftyVenue'])+0.0328*(df.at[VenueNumberList6[i-1]-1,'HighestScoreRating']))
+        
+if len(VenueNumberList7)>0:
+    df.at[VenueNumberList7[0]-1,"VenueValue"]=0
+    for i in range(1,len(VenueNumberList7)):
+        df.at[VenueNumberList7[i]-1,"VenueValue"]=(0.4262*(df.at[VenueNumberList7[i-1]-1,'AvgRatingVenue'])+0.2566*(df.at[VenueNumberList7[i-1]-1,'MatchVen'])+0.1510*(df.at[VenueNumberList7[i-1]-1,'SrRating'])+0.0787*(df.at[VenueNumberList7[i-1]-1,'HundredVenueRating'])+0.0556*(df.at[VenueNumberList7[i-1]-1,'FiftyVenue'])+0.0328*(df.at[VenueNumberList7[i-1]-1,'HighestScoreRating']))
+
+
+if len(VenueNumberList8)>0:
+    df.at[VenueNumberList8[0]-1,"VenueValue"]=0
+    for i in range(1,len(VenueNumberList8)):
+        df.at[VenueNumberList8[i]-1,"VenueValue"]=(0.4262*(df.at[VenueNumberList8[i-1]-1,'AvgRatingVenue'])+0.2566*(df.at[VenueNumberList8[i-1]-1,'MatchVen'])+0.1510*(df.at[VenueNumberList8[i-1]-1,'SrRating'])+0.0787*(df.at[VenueNumberList8[i-1]-1,'HundredVenueRating'])+0.0556*(df.at[VenueNumberList8[i-1]-1,'FiftyVenue'])+0.0328*(df.at[VenueNumberList8[i-1]-1,'HighestScoreRating']))
+        
+if len(VenueNumberList9)>0:
+    df.at[VenueNumberList9[0]-1,"VenueValue"]=0
+    for i in range(1,len(VenueNumberList9)):
+        df.at[VenueNumberList9[i]-1,"VenueValue"]=(0.4262*(df.at[VenueNumberList9[i-1]-1,'AvgRatingVenue'])+0.2566*(df.at[VenueNumberList9[i-1]-1,'MatchVen'])+0.1510*(df.at[VenueNumberList9[i-1]-1,'SrRating'])+0.0787*(df.at[VenueNumberList9[i-1]-1,'HundredVenueRating'])+0.0556*(df.at[VenueNumberList9[i-1]-1,'FiftyVenue'])+0.0328*(df.at[VenueNumberList9[i-1]-1,'HighestScoreRating']))
+        
+if len(VenueNumberList10)>0:
+    df.at[VenueNumberList10[0]-1,"VenueValue"]=0
+    for i in range(1,len(VenueNumberList10)):
+        df.at[VenueNumberList10[i]-1,"VenueValue"]=(0.4262*(df.at[VenueNumberList10[i-1]-1,'AvgRatingVenue'])+0.2566*(df.at[VenueNumberList10[i-1]-1,'MatchVen'])+0.1510*(df.at[VenueNumberList10[i-1]-1,'SrRating'])+0.0787*(df.at[VenueNumberList10[i-1]-1,'HundredVenueRating'])+0.0556*(df.at[VenueNumberList10[i-1]-1,'FiftyVenue'])+0.0328*(df.at[VenueNumberList10[i-1]-1,'HighestScoreRating']))
+        
+if len(VenueNumberList11)>0:
+    df.at[VenueNumberList11[0]-1,"VenueValue"]=0
+    for i in range(1,len(VenueNumberList11)):
+        df.at[VenueNumberList11[i]-1,"VenueValue"]=(0.4262*(df.at[VenueNumberList11[i-1]-1,'AvgRatingVenue'])+0.2566*(df.at[VenueNumberList11[i-1]-1,'MatchVen'])+0.1510*(df.at[VenueNumberList11[i-1]-1,'SrRating'])+0.0787*(df.at[VenueNumberList11[i-1]-1,'HundredVenueRating'])+0.0556*(df.at[VenueNumberList11[i-1]-1,'FiftyVenue'])+0.0328*(df.at[VenueNumberList11[i-1]-1,'HighestScoreRating']))
+        
+if len(VenueNumberList12)>0:
+    df.at[VenueNumberList12[0]-1,"VenueValue"]=0
+    for i in range(1,len(VenueNumberList12)):
+        df.at[VenueNumberList12[i]-1,"VenueValue"]=(0.4262*(df.at[VenueNumberList12[i-1]-1,'AvgRatingVenue'])+0.2566*(df.at[VenueNumberList12[i-1]-1,'MatchVen'])+0.1510*(df.at[VenueNumberList12[i-1]-1,'SrRating'])+0.0787*(df.at[VenueNumberList12[i-1]-1,'HundredVenueRating'])+0.0556*(df.at[VenueNumberList12[i-1]-1,'FiftyVenue'])+0.0328*(df.at[VenueNumberList12[i-1]-1,'HighestScoreRating']))
+        
+    
+if len(VenueNumberList13)>0:
+    df.at[VenueNumberList13[0]-1,"VenueValue"]=0
+    for i in range(1,len(VenueNumberList13)):
+        df.at[VenueNumberList13[i]-1,"VenueValue"]=(0.4262*(df.at[VenueNumberList13[i-1]-1,'AvgRatingVenue'])+0.2566*(df.at[VenueNumberList13[i-1]-1,'MatchVen'])+0.1510*(df.at[VenueNumberList13[i-1]-1,'SrRating'])+0.0787*(df.at[VenueNumberList13[i-1]-1,'HundredVenueRating'])+0.0556*(df.at[VenueNumberList13[i-1]-1,'FiftyVenue'])+0.0328*(df.at[VenueNumberList13[i-1]-1,'HighestScoreRating']))
+            
+if len(VenueNumberList14)>0:
+    df.at[VenueNumberList14[0]-1,"VenueValue"]=0
+    for i in range(1,len(VenueNumberList14)):
+        df.at[VenueNumberList14[i]-1,"VenueValue"]=(0.4262*(df.at[VenueNumberList14[i-1]-1,'AvgRatingVenue'])+0.2566*(df.at[VenueNumberList14[i-1]-1,'MatchVen'])+0.1510*(df.at[VenueNumberList14[i-1]-1,'SrRating'])+0.0787*(df.at[VenueNumberList14[i-1]-1,'HundredVenueRating'])+0.0556*(df.at[VenueNumberList14[i-1]-1,'FiftyVenue'])+0.0328*(df.at[VenueNumberList14[i-1]-1,'HighestScoreRating']))
+        
+if len(VenueNumberList15)>0:
+    df.at[VenueNumberList15[0]-1,"VenueValue"]=0
+    for i in range(1,len(VenueNumberList15)):
+        df.at[VenueNumberList15[i]-1,"VenueValue"]=(0.4262*(df.at[VenueNumberList15[i-1]-1,'AvgRatingVenue'])+0.2566*(df.at[VenueNumberList15[i-1]-1,'MatchVen'])+0.1510*(df.at[VenueNumberList15[i-1]-1,'SrRating'])+0.0787*(df.at[VenueNumberList15[i-1]-1,'HundredVenueRating'])+0.0556*(df.at[VenueNumberList15[i-1]-1,'FiftyVenue'])+0.0328*(df.at[VenueNumberList15[i-1]-1,'HighestScoreRating']))
+        
+if len(VenueNumberList16)>0:
+    df.at[VenueNumberList16[0]-1,"VenueValue"]=0
+    for i in range(1,len(VenueNumberList16)):
+        df.at[VenueNumberList16[i]-1,"VenueValue"]=(0.4262*(df.at[VenueNumberList16[i-1]-1,'AvgRatingVenue'])+0.2566*(df.at[VenueNumberList16[i-1]-1,'MatchVen'])+0.1510*(df.at[VenueNumberList16[i-1]-1,'SrRating'])+0.0787*(df.at[VenueNumberList16[i-1]-1,'HundredVenueRating'])+0.0556*(df.at[VenueNumberList16[i-1]-1,'FiftyVenue'])+0.0328*(df.at[VenueNumberList16[i-1]-1,'HighestScoreRating']))
+        
+if len(VenueNumberList17)>0:
+    df.at[VenueNumberList17[0]-1,"VenueValue"]=0
+    for i in range(1,len(VenueNumberList17)):
+        df.at[VenueNumberList17[i]-1,"VenueValue"]=(0.4262*(df.at[VenueNumberList17[i-1]-1,'AvgRatingVenue'])+0.2566*(df.at[VenueNumberList17[i-1]-1,'MatchVen'])+0.1510*(df.at[VenueNumberList17[i-1]-1,'SrRating'])+0.0787*(df.at[VenueNumberList17[i-1]-1,'HundredVenueRating'])+0.0556*(df.at[VenueNumberList17[i-1]-1,'FiftyVenue'])+0.0328*(df.at[VenueNumberList17[i-1]-1,'HighestScoreRating']))
+        
+if len(VenueNumberList19)>0:
+    df.at[VenueNumberList19[0]-1,"VenueValue"]=0
+    for i in range(1,len(VenueNumberList19)):
+        df.at[VenueNumberList19[i]-1,"VenueValue"]=(0.4262*(df.at[VenueNumberList19[i-1]-1,'AvgRatingVenue'])+0.2566*(df.at[VenueNumberList19[i-1]-1,'MatchVen'])+0.1510*(df.at[VenueNumberList19[i-1]-1,'SrRating'])+0.0787*(df.at[VenueNumberList19[i-1]-1,'HundredVenueRating'])+0.0556*(df.at[VenueNumberList19[i-1]-1,'FiftyVenue'])+0.0328*(df.at[VenueNumberList19[i-1]-1,'HighestScoreRating']))   
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
 ###########################
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#########################
+#########################################
 
 
 
